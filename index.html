@@ -86,7 +86,7 @@
 
 
         //Step 2: log the message to the console
-        console.log("Change title!")
+        console.log("Changed title!")
        
 
 
@@ -98,18 +98,37 @@
 
         // Step 4: Add the correct ID for the button, create an element 'p' and add a message "2023 Champions!" to p
         document.getElementById("addMessageButton").addEventListener("click", function() {
+            let div = document.getElementById('#message');
+            let p = document.createElement("p");
+            p.textContent = '2023 Champions!';
+
+            let gameDayMessage = p;
+
             document.getElementById("message").appendChild(gameDayMessage); // Add to the message div
         });
 
         const playerItems = document.querySelectorAll("li");
         // Step 5: Use a conditional statement for playerItems. If there are more than 5 players, log a special message to the console "Go Blue, so many great players in one season!
 
+        if (playerItems.length > 5) {
+            console.log('Go Blue, so many great players in one season!');
+        }
+
         //Try it out with length > 4
+        if (playerItems.length > 4) {
+            console.log('Go Blue, so many great players in one season!');
+        }
 
 
         function displayInformation() {
             // Step 6: Update the three span elements using ONLY JavaScript
+            let url = window.location.href;
+            let listItems =playerItems.length;
+            let currentDateTime = new Date().toLocaleString();
 
+            document.getElementById("URL").textContent = url;
+            document.getElementById("items").textContent = listItems;
+            document.getElementById("time").textContent = currentDateTime;
         }
     </script>
 </body>
